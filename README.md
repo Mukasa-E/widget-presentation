@@ -20,7 +20,7 @@ Real-world use: Any app that needs users to pick one option from a list—filter
 
 ## Screenshot
 
-(widget_presentation/screenshots/demo.png)
+![Kigali Services Filter Demo](widget_presentation/screenshots/demo.png)
 
 Tap any chip to filter. The selected one turns orange.
 
@@ -43,5 +43,5 @@ Change orange to blue or green → the selected chip changes color. That's it.
 
 All three properties are commented in the ChoiceChip widget—look for the `// PROPERTY X:` blocks. The logic is simple: store the user's pick in `selectedCategory`, and update it when they tap.
 
-No weird patterns. No tutorials copy-pasted. Just `setState()` and conditional rendering.
+
 
