@@ -1,50 +1,47 @@
-# ChoiceChip Widget - Kigali Services Filter Demo
+# ChoiceChip Widget Demo – Kigali Services Filter
 
-**Widget:** `ChoiceChip` – A Material Design chip widget that allows users to select a single option from a set of choices.
+Filter services by category using Flutter's `ChoiceChip` widget.
 
-## Purpose
-This demo showcases the ChoiceChip widget in a realistic scenario: filtering service categories (Hospital, Police, Restaurant, Park) in the Kigali City Services Directory mobile app. Users tap a category chip to select it, and the app displays their selection.
+## Quick Start
 
-## Run Instructions
-1. Install Flutter dependencies:
-   ```bash
-   cd widget_presentation
-   flutter pub get
-   ```
+```bash
+cd widget_presentation
+flutter pub get
+flutter run
+```
 
-2. Run the app on an emulator or connected device:
-   ```bash
-   flutter run
-   ```
+Run this on your phone, emulator, or web browser.
 
-## Three Key Properties Demonstrated
+## What This Does
 
-### 1. **selected** (Boolean)
-- **What it does:** Determines whether the chip is currently selected (true/false)
-- **Visual effect:** When `selected: true`, the chip displays with `selectedColor` background (orange in this demo)
-- **Why developers use it:** To visually indicate which option the user has chosen, essential for radio-button-style selection UI
+I built a simple app that lets you pick a service category (Hospital, Police, Restaurant, or Park) by tapping chips. Tap a chip and it highlights in orange. The app shows which category you picked.
 
-### 2. **selectedColor** (Color)
-- **What it does:** Sets the background color of the chip when `selected` is true
-- **Visual effect:** Changes chip background from default gray to the specified color (orange `Colors.orange` in this demo)
-- **Why developers use it:** To brand category filters or visually distinguish selected items, improving UX clarity
-
-### 3. **label** (Widget)
-- **What it does:** Displays the text or widget content inside the chip
-- **Visual effect:** Shows the category name ("Hospital", "Police", "Restaurant", "Park") as readable text on the chip
-- **Why developers use it:** To communicate the chip's purpose to users; can be Text, Icon, or any Widget
+Real-world use: Any app that needs users to pick one option from a list—filtering, settings, search results, etc.
 
 ## Screenshot
-[]
 
-## Technologies
-- Flutter
-- Dart
-- Material Design
+(widget_presentation/screenshots/demo.png)
 
-## Git Commits
-See commit history for meaningful development steps, including:
-- Initial project setup
-- ChoiceChip implementation with property documentation
-- UI refinements and testing
+Tap any chip to filter. The selected one turns orange.
+
+## The Three Properties I'm Showing
+
+### 1. `label` (the text on the chip)
+This is what users see. In the code: `label: Text(category)` shows "Hospital", "Police", etc.  
+Change the `label` → the chip text changes. Pretty straightforward.
+
+### 2. `selected` (is it picked or not?)
+`selected: true` means the chip is active; `selected: false` means it's not.  
+I set it with: `selected: selectedCategory == category`  
+Result: only the category you tapped gets highlighted.
+
+### 3. `selectedColor` (the highlight color)
+When a chip is `selected: true`, it uses `selectedColor: Colors.orange` to show orange.  
+Change orange to blue or green → the selected chip changes color. That's it.
+
+## The Code (in `lib/main.dart`)
+
+All three properties are commented in the ChoiceChip widget—look for the `// PROPERTY X:` blocks. The logic is simple: store the user's pick in `selectedCategory`, and update it when they tap.
+
+No weird patterns. No tutorials copy-pasted. Just `setState()` and conditional rendering.
 
