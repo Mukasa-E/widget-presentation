@@ -55,19 +55,30 @@ class _ChoiceChipDemoScreenState extends State<ChoiceChipDemoScreen> {
               runSpacing: 10,
               children: categories.map((category) {
                 return ChoiceChip(
-                  // PROPERTY 1: label - The text displayed in the chip
-                  // Displays the category name ("Hospital", "Police", etc.)
-                  // This is what users see and helps them understand each option
+                  // ============================================================
+                  // PROPERTY 1: label
+                  // Purpose: Displays the text/widget content inside the chip
+                  // In this demo: Shows category names (Hospital, Police, etc.)
+                  // Developer use case: Tell users what each chip represents
+                  // ============================================================
                   label: Text(category),
 
-                  // PROPERTY 2: selected - Boolean that determines if chip is selected
-                  // When true, the chip shows in selectedColor; when false, shows default style
-                  // This visually indicates which category the user has currently chosen
+                  // ============================================================
+                  // PROPERTY 2: selected (Boolean)
+                  // Purpose: Determines if the chip is in a selected state
+                  // In this demo: True when selectedCategory matches this chip
+                  // Visual result: Selected chip turns orange; unselected stays gray
+                  // Developer use case: Radio-button-style selection UI pattern
+                  // ============================================================
                   selected: selectedCategory == category,
 
-                  // PROPERTY 3: selectedColor - The background color when selected is true
-                  // Changes from default gray to orange to visually highlight the chosen category
-                  // Improves UX by making the user's selection obvious at a glance
+                  // ============================================================
+                  // PROPERTY 3: selectedColor (Color)
+                  // Purpose: Background color when selected is true
+                  // In this demo: Colors.orange highlights the chosen category
+                  // Visual result: Immediate visual feedback of user's selection
+                  // Developer use case: Brand your app; make selections obvious
+                  // ============================================================
                   selectedColor: Colors.orange,
 
                   onSelected: (isSelected) {
