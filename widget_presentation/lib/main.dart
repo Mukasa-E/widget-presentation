@@ -55,9 +55,21 @@ class _ChoiceChipDemoScreenState extends State<ChoiceChipDemoScreen> {
               runSpacing: 10,
               children: categories.map((category) {
                 return ChoiceChip(
+                  // PROPERTY 1: label - The text displayed in the chip
+                  // Displays the category name ("Hospital", "Police", etc.)
+                  // This is what users see and helps them understand each option
                   label: Text(category),
+
+                  // PROPERTY 2: selected - Boolean that determines if chip is selected
+                  // When true, the chip shows in selectedColor; when false, shows default style
+                  // This visually indicates which category the user has currently chosen
                   selected: selectedCategory == category,
+
+                  // PROPERTY 3: selectedColor - The background color when selected is true
+                  // Changes from default gray to orange to visually highlight the chosen category
+                  // Improves UX by making the user's selection obvious at a glance
                   selectedColor: Colors.orange,
+
                   onSelected: (isSelected) {
                     if (isSelected) {
                       setState(() {
